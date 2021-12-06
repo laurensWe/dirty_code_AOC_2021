@@ -13,7 +13,7 @@ for fish_timer in init_state.split(','):
     fish_swarm[int(fish_timer.strip())] += 1
 
 current_day = 0
-end_day = 80
+end_day = 256
 new_fish_swarm = defaultdict(int)
 while current_day < end_day:
     for fish_time, count in fish_swarm.items():
