@@ -1,3 +1,7 @@
+import time
+start_time = time.time()
+
+
 f = open("day_6/input_data_1.txt", "r")
 import copy
 fish_states = f.readlines()
@@ -27,7 +31,6 @@ while current_day < end_day:
     fish_swarm = copy.deepcopy(new_fish_swarm)
     # sorting is needed otherwise fish_time 7 will be before 0 :)
     fish_swarm = {key: value for key, value in sorted(fish_swarm.items())}
-    print(fish_swarm)
     new_fish_swarm = defaultdict(int)
     current_day += 1
 
@@ -37,3 +40,4 @@ for fish_time, count in fish_swarm.items():
     total_fish += count
 
 print("total amount of fish in the swarm: {}".format(total_fish))
+print("--- %s seconds ---" % (time.time() - start_time))
